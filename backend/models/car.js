@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 const CarSchema = new Schema({
 
     Name: { type: String, required: true },
+        Model: { type: String },
     Color: { type: String },
     Price: { type: String, required: true },
     Year: { type: String, required: true },
