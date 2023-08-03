@@ -112,7 +112,7 @@ app.get('/api/cars', async (req, res) => {
         const totalCars = await Car.countDocuments(filterQuery);
         console.log(filterQuery);
         console.log(sortQuery);
-        let carsQuery = Car.find(filterQuery).skip((page - 1) * pageSize).limit(parseInt(pageSize, 15));
+        let carsQuery = Car.find(filterQuery).skip((page - 1) * pageSize).limit(parseInt(pageSize));
         if (Object.keys(sortQuery).length > 0) {
             if (sortQuery.Price) {
                 carsQuery = carsQuery.sort({ Price: sortQuery.Price }).collation({ locale: 'en_US', numericOrdering: true });
