@@ -53,12 +53,16 @@ app.get('/api/cars', async (req, res) => {
             console.log(sortField);
             if (sortField === 'sortby:VehicleAtoZ') {
                 sortQuery.Name = 1;
+                 sortQuery._id = 1;
             } else if (sortField === 'sortby:VehicleZtoA') {
                 sortQuery.Name = -1;
+                  sortQuery._id = -1;
             } else if (sortField === 'sortby:PriceHightoLow') {
                 sortQuery.Price = -1;
+                 sortQuery._id = -1;
             } else if (sortField === 'sortby:PriceLowtoHigh') {
                 sortQuery.Price = 1;
+                  sortQuery._id = 1;
             }
         });
     }
